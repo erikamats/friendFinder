@@ -1,33 +1,43 @@
+// Dependencies
+
+
 var http = require("http");
 var express = require("express");
 var fs = require("fs");
+var path = require ("path");
+var bodyParser = require("body-parser");
 
+// Set Express
+var app = express();
+
+// set port listener
 var PORT = process.env.PORT || 3000;
 
-var server = http.createServer(handleRequest);
+app.use(bodyParser.urlencoded({
+    extended:true}));
 
-function handleRequest(req, res) {
-    var path = req.url;
+app.use(bodyParser.json());
 
-    switch (path) {
-        case "/survey.html":
-          return renderHome(path + "home.html", res);
-
-        default:
-         return renderHome("/home.html", res);
+var profiles = [
+    {
+   name: "test",
+   photo: "",
+   scores: "",
     }
-}
+];
 
-function renderHome(filePath, res) {
-    return fs.readFile(__dirname + filePath, function (err, data) {
-        res.writeHead(200, { "Content-Type": "text/html" });
-        res.end(data);
-    });
+//Routers
+app.get("/", function(req, res) {
+    res.sendFile(path.join(__dirname, "/app/public/home.html"));
+  });
+  app.get("/survey", function(req, res) {
+    res.sendFile(path.join(__dirname, "app/public/survey.html"));
+  });
 
-    // end of handleRequest below
-}
 
-// Starts our server.
-server.listen(PORT, function () {
-    console.log("Server listening on: http://localhost:" + PORT);
+// Listener
+
+app.listen(PORT, function(){
+    console.log("App listening on PORT: " + PORT);
 });
+
