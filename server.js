@@ -2,7 +2,7 @@ var http = require("http");
 var express = require("express");
 var fs = require("fs");
 
-var PORT = 8000;
+var PORT = process.env.PORT || 3000;
 
 var server = http.createServer(handleRequest);
 
