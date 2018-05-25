@@ -90,7 +90,7 @@
       <h3>
         <strong>Question 3 </strong>
       </h3>
-      <h4>Singing is easier than dancing</h4>
+      <h4>Singing is easier than dancing!</h4>
 
       <div class="form-group">
         <label for="q1">1 (Strongly Disagree) - 5 (Strongly Agree) </label>
@@ -109,7 +109,7 @@
       <h3>
         <strong>Question 4 </strong>
       </h3>
-      <h4>INSERT QUESTION HERE!</h4>
+      <h4> Rock Rose is more fun than Downtown. </h4>
 
       <div class="form-group">
         <label for="q1">1 (Strongly Disagree) - 5 (Strongly Agree) </label>
@@ -128,7 +128,7 @@
       <h3>
         <strong>Question 5</strong>
       </h3>
-      <h4>INSERT QUESTION HERE!</h4>
+      <h4>Sustainable Foods are essential.</h4>
 
       <div class="form-group">
         <label for="q1">1 (Strongly Disagree) - 5 (Strongly Agree) </label>
@@ -147,7 +147,7 @@
       <h3>
         <strong>Question 6</strong>
       </h3>
-      <h4>INSERT QUESTION HERE!</h4>
+      <h4>A glass of wine a day keeps the doctor away.</h4>
 
       <div class="form-group">
         <label for="q6">1 (Strongly Disagree) - 5 (Strongly Agree) </label>
@@ -166,7 +166,7 @@
       <h3>
         <strong>Question 7</strong>
       </h3>
-      <h4>INSERT QUESTION HERE!</h4>
+      <h4>Game of Thrones is Overrated.</h4>
 
       <div class="form-group">
         <label for="q7">1 (Strongly Disagree) - 5 (Strongly Agree) </label>
@@ -185,7 +185,7 @@
       <h3>
         <strong>Question 8</strong>
       </h3>
-      <h4>INSERT QUESTION HERE!</h4>
+      <h4>Iron Man is the best Avenger.</h4>
       <div class="form-group">
         <label for="q8">1 (Strongly Disagree) - 5 (Strongly Agree) </label>
         <select class="form-control" id="question8">
@@ -203,7 +203,7 @@
       <h3>
         <strong>Question 9</strong>
       </h3>
-      <h4>INSERT QUESTION HERE!</h4>
+      <h4>You'd rather go to school than to go to work.</h4>
 
       <div class="form-group">
         <label for="q9">1 (Strongly Disagree) - 5 (Strongly Agree) </label>
@@ -222,7 +222,7 @@
       <h3>
         <strong>Question 10</strong>
       </h3>
-      <h4>INSERT QUESTION HERE!</h4>
+      <h4>Love at first sight exists!</h4>
 
       <div class="form-group">
         <label for="q10">1 (Strongly Disagree) - 5 (Strongly Agree) </label>
@@ -241,7 +241,7 @@
     <br>
 
     <!-- Submit Button -->
-    <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit" data-toggle="modal" data-target="#myModal" data-show="true">
+    <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit" data-toggle="modal" data-target="#myModal" >
       <i class="fa fa-check-circle" aria-hidden="false"></i>
       Submit</button>
 
@@ -286,7 +286,7 @@
     </div>
   </div>
 
-
+  <script src="https://code.jquery.com/jquery.js"></script>
   <script type="text/javascript">
 
     $("#submit").on("click", function (event) {
@@ -309,8 +309,11 @@
         ]
 
       };
+  
 
       console.log(newFriend);
+
+   
 
       // Capture the form inputs and post to api/friends - display on Modal
     $.post("/api/friends", newFriend, function (data) {
@@ -320,9 +323,22 @@
 
       });
 
+      // clear choices
+          $("#name").val("");
+          $("#photo").val("");
+          $("#question1").val("");
+          $("#question2").val("");
+          $("#question3").val("");
+          $("#question4").val("");
+          $("#question5").val("");
+          $("#question6").val("");
+          $("#question7").val("");
+          $("#question8").val("");
+          $("#question9").val("");
+          $("#question10").val("");
 
+           });
 
-    });
   </script>
 
 

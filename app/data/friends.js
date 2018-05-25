@@ -13,6 +13,12 @@ var profileArray = [
         name: " Tom",
         photo: "https://www.google.com/imgres?imgurl=https%3A%2F%2Fstatic.boredpanda.com%2Fblog%2Fwp-content%2Fuploads%2F2017%2F05%2Fwhat-myspace-tom-anderson-doing-now-30-1.jpg&imgrefurl=https%3A%2F%2Fwww.boredpanda.com%2Fwhat-myspace-tom-anderson-doing-now%2F&docid=OIwh4gfD64H0LM&tbnid=TB4w-JX6lQV9GM%3A&vet=10ahUKEwjK57HU_Z_bAhUSUa0KHc4ICBIQMwgyKAAwAA..i&w=700&h=365&bih=960&biw=1920&q=tom%20myspace&ved=0ahUKEwjK57HU_Z_bAhUSUa0KHc4ICBIQMwgyKAAwAA&iact=mrc&uact=8",
         scores: [1, 1, 4, 2, 2, 5, 4,  2, 1, 5]
+    },
+
+    {
+        name: "Matsi",
+        photo: "https://www.google.com/imgres?imgurl=https%3A%2F%2Fpbs.twimg.com%2Fprofile_images%2F655203729965105152%2FoZU4AJjn_400x400.jpg&imgrefurl=https%3A%2F%2Ftwitter.com%2Fjellyfishdirect&docid=rkYElIUxQgls6M&tbnid=i1l3SFGYHSexrM%3A&vet=10ahUKEwj1jujBjqDbAhVJOKwKHWJBD5sQMwjdASgDMAM..i&w=256&h=256&bih=960&biw=1920&q=jellyfish&ved=0ahUKEwj1jujBjqDbAhVJOKwKHWJBD5sQMwjdASgDMAM&iact=mrc&uact=8",
+        scores: [5, 3, 4, 3, 5, 5, 2, 5, 3, 1]
     }
 ];
 
