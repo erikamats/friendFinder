@@ -3,28 +3,20 @@
 // A GET Route to /survey which should display the survey page.
 // A default, catch-all route that leads to home.html which displays the home page.
 
+var path = require("path");
 
-var http = require("http");
-var express = require("express");
-var fs = require("fs");
+module.exports = function(app){
 
-var PORT = 8000;
-
+ //Routers
 app.get("/", function(req, res) {
-    console.log(" responded - moving to survey");
-  });
+  res.sendFile(path.join(__dirname, "../public/home.html"));
+});
+app.get("/survey", function(req, res) {
+  res.sendFile(path.join(__dirname, "../public/survey.html"));
+});
 
+app.use("*", function(req, res) {
+  res.sendFile(path.join(__dirname, "../public/home.html"));
+});
 
-  app.get("/:page", function(req, res) {
-    var chosen = req.params.character;
-    console.log(chosen);
-
-    res.end();
-  });
-  
-
-
-  app.listen(PORT, function() {
-    console.log("App listening on PORT " + PORT);
-  });
-  
+}

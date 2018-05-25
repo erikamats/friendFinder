@@ -1,6 +1,5 @@
 // Dependencies
 
-
 var http = require("http");
 var express = require("express");
 var fs = require("fs");
@@ -18,21 +17,9 @@ app.use(bodyParser.urlencoded({
 
 app.use(bodyParser.json());
 
-var profiles = [
-    {
-   name: "test",
-   photo: "",
-   scores: "",
-    }
-];
-
-//Routers
-app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "/app/public/home.html"));
-  });
-  app.get("/survey", function(req, res) {
-    res.sendFile(path.join(__dirname, "app/public/survey.html"));
-  });
+//Routers - moved to routing folder
+require("./app/routing/apiRoutes.js")(app); 
+require("./app/routing/htmlRoutes.js")(app); 
 
 
 // Listener
